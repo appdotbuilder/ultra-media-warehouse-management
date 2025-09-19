@@ -194,6 +194,140 @@ export default function Welcome() {
                     </div>
                 </section>
 
+                {/* Setup Instructions Section */}
+                <section className="bg-gray-50 py-16">
+                    <div className="container mx-auto px-6">
+                        <div className="max-w-4xl mx-auto">
+                            <h3 className="text-3xl font-bold text-center text-gray-900 mb-8">
+                                🔧 Setup & Administrator Access
+                            </h3>
+                            
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                {/* Admin Login Info */}
+                                <div className="bg-white rounded-xl shadow-lg p-8 border border-blue-100">
+                                    <div className="text-center mb-6">
+                                        <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span className="text-3xl">👑</span>
+                                        </div>
+                                        <h4 className="text-2xl font-bold text-gray-900 mb-2">Administrator Account</h4>
+                                        <p className="text-gray-600">Default admin account sudah tersedia</p>
+                                    </div>
+                                    
+                                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                                        <div className="flex items-start">
+                                            <div className="text-red-600 mr-3">🔑</div>
+                                            <div>
+                                                <p className="font-semibold text-red-800 mb-2">Login Credentials:</p>
+                                                <div className="space-y-1 text-sm">
+                                                    <p><strong>Email:</strong> <code className="bg-red-100 px-2 py-1 rounded">admin@ultramedtek.com</code></p>
+                                                    <p><strong>Password:</strong> <code className="bg-red-100 px-2 py-1 rounded">password</code></p>
+                                                    <p><strong>Role:</strong> <span className="text-red-600">Full Admin Access</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-center">
+                                        <Link href="/login">
+                                            <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2">
+                                                👑 Login sebagai Admin
+                                            </Button>
+                                        </Link>
+                                    </div>
+
+                                    <div className="mt-4 text-xs text-gray-500 text-center">
+                                        ⚠️ Ganti password default untuk keamanan
+                                    </div>
+                                </div>
+
+                                {/* Setup Instructions */}
+                                <div className="bg-white rounded-xl shadow-lg p-8 border border-green-100">
+                                    <div className="text-center mb-6">
+                                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <span className="text-3xl">📋</span>
+                                        </div>
+                                        <h4 className="text-2xl font-bold text-gray-900 mb-2">Setup Instructions</h4>
+                                        <p className="text-gray-600">Langkah-langkah untuk menjalankan sistem</p>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <div className="flex items-start">
+                                            <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">1</div>
+                                            <div>
+                                                <p className="font-semibold text-gray-900">Database Migration</p>
+                                                <code className="text-xs bg-gray-100 px-2 py-1 rounded block mt-1">php artisan migrate</code>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start">
+                                            <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">2</div>
+                                            <div>
+                                                <p className="font-semibold text-gray-900">Seed Data & Admin Account</p>
+                                                <code className="text-xs bg-gray-100 px-2 py-1 rounded block mt-1">php artisan db:seed</code>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start">
+                                            <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">3</div>
+                                            <div>
+                                                <p className="font-semibold text-gray-900">Build Assets</p>
+                                                <code className="text-xs bg-gray-100 px-2 py-1 rounded block mt-1">npm run build</code>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start">
+                                            <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-1">4</div>
+                                            <div>
+                                                <p className="font-semibold text-gray-900">Start Server</p>
+                                                <code className="text-xs bg-gray-100 px-2 py-1 rounded block mt-1">php artisan serve</code>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                        <div className="flex items-start">
+                                            <div className="text-blue-600 mr-2">💡</div>
+                                            <div className="text-sm text-blue-800">
+                                                <p className="font-semibold mb-1">Troubleshooting CSRF (419 Error):</p>
+                                                <p>Sudah diperbaiki dengan menambahkan CSRF token di header dan session management.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Additional Test Accounts */}
+                            <div className="mt-8 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                                <h4 className="text-lg font-bold text-gray-900 mb-4 text-center">
+                                    👥 Additional Test Accounts
+                                </h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                                    <div className="text-center p-3 bg-blue-50 rounded-lg">
+                                        <div className="font-semibold text-blue-800">📦 Staff Gudang</div>
+                                        <div className="text-blue-600 mt-1">staff.gudang@ultramedtek.com</div>
+                                        <div className="text-xs text-gray-600">password: password</div>
+                                    </div>
+                                    <div className="text-center p-3 bg-purple-50 rounded-lg">
+                                        <div className="font-semibold text-purple-800">💰 Purchasing</div>
+                                        <div className="text-purple-600 mt-1">purchasing.manager@ultramedtek.com</div>
+                                        <div className="text-xs text-gray-600">password: password</div>
+                                    </div>
+                                    <div className="text-center p-3 bg-green-50 rounded-lg">
+                                        <div className="font-semibold text-green-800">📊 Finance</div>
+                                        <div className="text-green-600 mt-1">finance.manager@ultramedtek.com</div>
+                                        <div className="text-xs text-gray-600">password: password</div>
+                                    </div>
+                                    <div className="text-center p-3 bg-gray-50 rounded-lg">
+                                        <div className="font-semibold text-gray-800">👤 Regular User</div>
+                                        <div className="text-gray-600 mt-1">regular.user@ultramedtek.com</div>
+                                        <div className="text-xs text-gray-600">password: password</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* CTA Section */}
                 <section className="bg-gradient-to-r from-blue-600 to-blue-700 py-16">
                     <div className="container mx-auto px-6 text-center">
@@ -210,9 +344,11 @@ export default function Welcome() {
                                     🚀 Mulai Gratis Sekarang
                                 </Button>
                             </Link>
-                            <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-500 px-8 py-3 text-lg">
-                                📞 Hubungi Sales
-                            </Button>
+                            <Link href="/login">
+                                <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-500 px-8 py-3 text-lg">
+                                    👑 Login Admin
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </section>

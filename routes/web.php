@@ -13,6 +13,14 @@ Route::get('/health-check', function () {
     ]);
 })->name('health-check');
 
+Route::post('/csrf-test', function () {
+    return response()->json([
+        'status' => 'success',
+        'message' => 'CSRF token is working correctly',
+        'timestamp' => now()->toISOString(),
+    ]);
+})->name('csrf-test');
+
 Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
